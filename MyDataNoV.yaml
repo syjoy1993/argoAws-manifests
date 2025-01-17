@@ -1,0 +1,37 @@
+#MyData.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-aws-data-deployment
+  labels:
+    app: ArgoAwsData
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ArgoAwsData
+  template:
+    metadata:
+      labels:
+        app: ArgoAwsData
+    spec:
+      containers:
+        - name: my-data
+          image: mysql:8.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3306
+              protocol: TCP
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mydata-basic-auth
+                  key: username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mydata-basic-auth
+                  key: password
+         
+      
