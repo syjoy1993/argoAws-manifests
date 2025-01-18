@@ -4,7 +4,7 @@ metadata:
   name: argo-aws-data-service
 spec:
   selector:
-    app: ArgoAwsData # Deployment 라벨과 일치해야 함
+    app: argo-aws-data # Deployment 라벨과 일치해야 함
   ports:
     - protocol: TCP
       port: 3306

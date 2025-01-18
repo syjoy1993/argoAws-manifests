@@ -4,7 +4,7 @@ metadata:
   name: argo-aws-app-service
 spec:
   selector:
-    app: ArgoAwsApp # Deployment 라벨과 일치해야 함
+    app: argo-aws-app # Deployment 라벨과 일치해야 함
   ports:
     - protocol: TCP
       port: 8080

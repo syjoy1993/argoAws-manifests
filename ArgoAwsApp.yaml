@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ArgoAwsApp-deployment
+  name: argo-aws-app-deployment
   labels:
-    app: ArgoAwsApp
+    app: argo-aws-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ArgoAwsApp
+      app: argo-aws-app
   template:
     metadata:
-      name: ArgoAwsApp
+      name: argo-aws-app
       labels:
-        app: ArgoAwsApp
+        app: argo-aws-app
     spec:
       containers:
-        - name: ArgoAwsApp
+        - name: argo-aws-app
           image: 897729139176.dkr.ecr.ap-northeast-2.amazonaws.com/eks/eks1:latest
           imagePullPolicy: Always
           ports:
@@ -41,4 +41,4 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "1000m"
-          restartPolicy: Always
+          

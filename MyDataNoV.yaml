@@ -4,16 +4,16 @@ kind: Deployment
 metadata:
   name: argo-aws-data-deployment
   labels:
-    app: ArgoAwsData
+    app: argo-aws-data
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ArgoAwsData
+      app: argo-aws-data
   template:
     metadata:
       labels:
-        app: ArgoAwsData
+        app: argo-aws-data
     spec:
       containers:
         - name: my-data
